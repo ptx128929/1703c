@@ -1,5 +1,6 @@
 package com.bawei.spp;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -87,5 +88,20 @@ public class AssertTest {
 		}
 	}
 	
+	
+	@Test
+	public void fun9Test(){
+	  BigDecimal bigDecimal = new 	BigDecimal(5);
+	  BigDecimal bigDecima2 = new 	BigDecimal(3);
+	  
+	/*  if (bigDecimal.compareTo(bigDecima2)==1) {
+		  System.out.println("5");
+	}*/
+	  
+	 /* Boolean flag =bigDecimal.compareTo(BigDecimal.ZERO)==-1 && bigDecimal.compareTo(BigDecimal.ONE)==0 ;
+	  System.out.println(flag);*/
+	  BigDecimal multiply = bigDecimal.divide(new BigDecimal(2),5,BigDecimal.ROUND_HALF_DOWN);
+	  System.out.println(multiply);
+	}
 	
 }
