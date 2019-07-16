@@ -11,7 +11,7 @@ import com.pengtianxiang.common.utils.Assertutil;
 import com.pengtianxiang.common.utils.CRuntimeException;
 
 public class AssertuitlText {
-	
+	//测试AssertUtil.isTrue()方法
 	@Test
 	public void fun1test(){
 		try {
@@ -23,7 +23,7 @@ public class AssertuitlText {
 		}
 	}
 	
-	
+	//测试AssertUtil.isFalse()方法
 	@Test
 	public void fun2test(){
 		try {
@@ -34,7 +34,7 @@ public class AssertuitlText {
 			e.printStackTrace();
 		}
 	}
-	
+	//测试AssertUtil.notNull()方法
 	@Test
 	public void fun3test(){
 		try {
@@ -46,7 +46,7 @@ public class AssertuitlText {
 		}
 	}
 
-	
+	//测试AssertUtil.isNull()方法
 	@Test
 	public void fun4test(){
 		try {
@@ -58,7 +58,7 @@ public class AssertuitlText {
 		}
 	}
 
-	
+	//用List对象测试AssertUtil.notEmpty()方法
 	@Test
 	public void fun5test(){
 		try {
@@ -72,7 +72,7 @@ public class AssertuitlText {
 	}
 	
 	
-
+	//用Map对象测试AssertUtil.notEmpty()方法
 	@Test
 	public void fun6test(){
 		try {
@@ -84,7 +84,7 @@ public class AssertuitlText {
 			e.printStackTrace();
 		}
 	}
-	
+	//用String对象测试AssertUtil.hasText()方法
 	@Test
 	public void fun7test(){
 		try {
@@ -95,7 +95,7 @@ public class AssertuitlText {
 			e.printStackTrace();
 		}
 	}
-	
+	//测试AssertUtil. greaterThanZero()方法
 	@Test
 	public void fun8test(){
 		try {
