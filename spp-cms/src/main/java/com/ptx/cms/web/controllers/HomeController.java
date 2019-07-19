@@ -92,5 +92,14 @@ public class HomeController {
 		
 		return "home";
 	}
-
+   
+	@RequestMapping("/article")
+	private String article(Integer id,Model modol){
+		articleService.increaseHit(id);
+		Article article=articleService.selectByPrimaryKey(id);
+		modol.addAttribute("blog",article);
+		return "blog";
+		
+	}
+	
 }
