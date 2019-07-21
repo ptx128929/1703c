@@ -22,6 +22,9 @@ public class FileUploadUtil {
 		
 		String fileName = file.getOriginalFilename();
 		String picture = "/upload/" + fileName;
+		if (fileName.equals("")) {
+			return "";
+		}
 		try {
 			file.transferTo(new File(realPath + File.separator + fileName));
 		} catch (IllegalStateException e) {

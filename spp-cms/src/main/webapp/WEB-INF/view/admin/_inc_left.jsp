@@ -44,4 +44,9 @@
             <i class="fas fa-fw fa-table"></i>
             <span>系统设置</span></a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/ss/liatshow">
+            <i class="fas fa-fw fa-table"></i>
+            <span>自己练习</span></a>
+        </li>
       </ul>

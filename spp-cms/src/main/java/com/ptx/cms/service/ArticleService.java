@@ -36,6 +36,12 @@ public interface ArticleService {
 
 
 	public abstract List<Article> queryAll(Article article);
+
+
+	public abstract void updateBykey(Article article);
+
+
+	public abstract void save(Article article);
 	
 
 }

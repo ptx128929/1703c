@@ -53,10 +53,11 @@ public class UserController {
 	
 	@RequestMapping({"/profile"})
 	public String profile(){
+		
 		return "user-space/profile";
 	}
 	
-	@RequestMapping("/bolgs")
+	@RequestMapping("/blogs")
 	public String blogs(Model model,HttpSession session,
 			@RequestParam(value="page",defaultValue="1")Integer page){
 		Article article =new Article();
@@ -66,11 +67,40 @@ public class UserController {
 		List<Article> articles=articleService.queryAll(article);
 		PageHelper.startPage(page,3);
 		PageInfo<Article> pageInfo = new PageInfo<Article>(articles,3);
-		String pagelist = PageHelpUtil.page("bolgs", pageInfo, null);
+		String pagelist = PageHelpUtil.page("blogs", pageInfo, null);
 		
 		model.addAttribute("blogs", articles);
 		model.addAttribute("pageList", pagelist);
-		return "user-space/bolg_list";
+		return "user-space/blog_list";
+		
+	}
+	@RequestMapping("/blog/edit")
+	public String edit(Integer id, Model model){
+		Article article = articleService.selectByPrimaryKey(id);
+		model.addAttribute("blog", article);
+		return "user-space/blog_edit";
+		
+	}
+	
+	@RequestMapping("/blog/save")
+	public String save(Article article,MultipartFile file,HttpServletRequest request){
+		String upload = FileUploadUtil.upload(request, file);
+		if (!upload.equals("")) {
+			article.setPicture(upload);
+		}
+		
+		if (article.getId() !=null) {
+			articleService.updateBykey(article);
+		}else{
+			article.setHits(0);
+			article.setHot(true);
+			article.setStatus(1);
+			article.setDeleted(false);
+			article.setCreated(new Date());
+			User user = (User) request.getSession().getAttribute(Constant.LOGIN_USER);
+			articleService.save(article);
+		}
+		return "redirect:/my/blogs";
 		
 	}
 

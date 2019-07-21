@@ -63,5 +63,17 @@ public class ArticleServiceImpl implements ArticleService {
 		// TODO Auto-generated method stub
 		return articleMapper.queryAll(article);
 	}
+
+	@Override
+	public void updateBykey(Article article) {
+		// TODO Auto-generated method stub
+		articleMapper.updateBykey(article);
+	}
+
+	@Override
+	public void save(Article article) {
+		// TODO Auto-generated method stub
+		articleMapper.save(article);
+	}
 	
 }

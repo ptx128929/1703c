@@ -66,9 +66,9 @@
 	</div>
 	<div><br/><br/></div>
 	<jsp:include page="/WEB-INF/inc/footer.jsp"/>
-	
+	    
 	<script type="text/javascript">
-		
+		      
 	</script>
   </body>
 </html>
