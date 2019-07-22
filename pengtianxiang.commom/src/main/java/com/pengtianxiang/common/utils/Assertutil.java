@@ -58,7 +58,7 @@ public class Assertutil {
 	//方法7：断言字符串必须有值，去掉空格，然后判断字符串长度是否大于0，如果没值，则抛出自定义异常，异常消息为第2个参数默认消息。 
 	public static void hasText(String condition, String message){
 	//TODO 实现代码
-		if (condition.trim().length()>0) {
+		if (condition.trim().length()==0 || condition==null) {
 			throw new CRuntimeException(message);
 		}
 	}
