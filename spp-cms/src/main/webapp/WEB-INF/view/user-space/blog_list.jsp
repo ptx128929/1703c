@@ -82,11 +82,11 @@
 					url:'/my/blog/remove?id=' + id,
 					type:'get',
 					success:function(data){
-						/* if(data.status){
+						 /* if(data.status){
 							$("#item_" + id).remove();
 						}else{
 							alert(data.message);
-						} */
+						}  */
 					}
 				});
 			}

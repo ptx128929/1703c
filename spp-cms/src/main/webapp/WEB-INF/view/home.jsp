@@ -139,8 +139,21 @@
 							</c:forEach>
 						</ol>
 					</div>
+					<div class="card-header">裱单</div>
+					<div class="card-body">
+						<ol>
+							<c:forEach items="${lastArticles}" var="article">
+							<li class="text-truncate">
+							<span class="red">${article.title}</span>
+							
+							</li>
+							&nbsp&nbsp&nbsp<li><span>${article.updated}</span> </li>
+							</c:forEach>
+						</ol>
+					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 	

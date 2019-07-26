@@ -367,7 +367,12 @@
       <if test="content != null">
         content=#{content,jdbcType=CLOB},
       </if>
-    </set>   
+    </set> 
+    <where>
+    id=#{id}
+    </where>  
      </update>
-
+<delete id="remove" parameterType="Integer">
+delete from cms_article where id=#{0}
+</delete>
 </mapper>

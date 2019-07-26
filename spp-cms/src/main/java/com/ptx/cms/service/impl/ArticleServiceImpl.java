@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ptx.cms.core.Page;
 import com.ptx.cms.dao.ArticleMapper;
 import com.ptx.cms.domain.Article;
+import com.ptx.cms.domain.Category;
+import com.ptx.cms.domain.Channel;
 import com.ptx.cms.service.ArticleService;
 
 /**
@@ -75,5 +77,12 @@ public class ArticleServiceImpl implements ArticleService {
 		// TODO Auto-generated method stub
 		articleMapper.save(article);
 	}
+
+	@Override
+	public Integer remove(Integer id) {
+		// TODO Auto-generated method stub
+		return articleMapper.remove(id);
+	}
+
 	
 }

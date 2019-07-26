@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Param;
 
 import com.ptx.cms.core.Page;
 import com.ptx.cms.domain.Article;
+import com.ptx.cms.domain.Category;
+import com.ptx.cms.domain.Channel;
 import com.ptx.cms.domain.User;
 
 /**
@@ -42,6 +44,9 @@ public interface ArticleService {
 
 
 	public abstract void save(Article article);
-	
+
+
+	public abstract Integer remove(Integer id);
+
 
 }

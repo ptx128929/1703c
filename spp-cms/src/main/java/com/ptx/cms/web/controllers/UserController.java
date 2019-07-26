@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.github.pagehelper.PageHelper;
@@ -27,6 +28,7 @@ import com.ptx.cms.domain.Category;
 import com.ptx.cms.domain.Channel;
 import com.ptx.cms.domain.User;
 import com.ptx.cms.service.ArticleService;
+import com.ptx.cms.service.UserService;
 import com.ptx.cms.utils.FileUploadUtil;
 import com.ptx.cms.utils.PageHelpUtil;
 import com.ptx.cms.web.Constant;
@@ -46,6 +48,9 @@ public class UserController {
 	@Autowired
 	ArticleService articleService;
 	
+	@Autowired
+	UserService userService;
+	
 	@RequestMapping({"/", "/index", "/home"})
 	public String home(){
 		return "user-space/home";
@@ -58,8 +63,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/blogs")
-	public String blogs(Model model,HttpSession session,
-			@RequestParam(value="page",defaultValue="1")Integer page){
+	public String blogs(Model model,HttpSession session,@RequestParam(value="page",defaultValue="1")Integer page){
 		Article article =new Article();
 		User user=(User) session.getAttribute(Constant.LOGIN_USER);
 		article.setAuthor(user);
@@ -103,5 +107,31 @@ public class UserController {
 		return "redirect:/my/blogs";
 		
 	}
-
+	@RequestMapping("/blog/remove")
+	@ResponseBody
+	public Integer remove(Integer id, Model model){
+		System.out.println(id);
+		Integer sunn=articleService.remove(id);
+		System.out.println(sunn);
+		return sunn;
+		
+	}
+	
+	//用户信息完善
+	@RequestMapping("/user/save")
+	public String usersave(User user,Model model){
+		System.out.println(user);
+		userService.updateByid(user);
+		return "redirect:/my/userinfo";
+		
+	}
+	//查询用户信息
+	@RequestMapping("/userinfo")
+	public String userinfo(HttpServletRequest request,Model model){
+		User  user =(User) request.getSession().getAttribute(Constant.LOGIN_USER);
+		User us=userService.selectById(user.getId());
+		System.out.println(us);
+		return "user-space/useredit";
+		
+	}
 }

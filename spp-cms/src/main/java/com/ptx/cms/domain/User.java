@@ -47,13 +47,83 @@ public class User implements Serializable {
 	/**更新时间*/
 	private Date updated;
 	
-	
+	/****/
+	private String url_blog;
+	/****/
+	private int score;
+	/****/
+	private String phone;
+	/****/
+	private String email;
+	/****/
+	private String address;
+	/****/
+	private String star;
+	/****/
+	private String motto;
+
 	//------------------------------------------------------------------------
 	
 	public User() {
 		super();
 	}
 	
+	public String getUrl_blog() {
+		return url_blog;
+	}
+
+	public void setUrl_blog(String url_blog) {
+		this.url_blog = url_blog;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getStar() {
+		return star;
+	}
+
+	public void setStar(String star) {
+		this.star = star;
+	}
+
+	public String getMotto() {
+		return motto;
+	}
+
+	public void setMotto(String motto) {
+		this.motto = motto;
+	}
+
 	public User(Integer id) {
 		super();
 		this.id = id;
@@ -142,6 +212,7 @@ public class User implements Serializable {
 	
 	//--------------------------------------------------------------------------------
 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -165,6 +236,14 @@ public class User implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", nickname=" + nickname
+				+ ", birthday=" + birthday + ", gender=" + gender + ", locked=" + locked + ", created=" + created
+				+ ", updated=" + updated + ", url_blog=" + url_blog + ", score=" + score + ", phone=" + phone
+				+ ", email=" + email + ", address=" + address + ", star=" + star + ", motto=" + motto + "]";
 	}
 	
 }

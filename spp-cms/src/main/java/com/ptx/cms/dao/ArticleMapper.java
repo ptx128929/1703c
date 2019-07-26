@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Param;
 
 import com.ptx.cms.core.Page;
 import com.ptx.cms.domain.Article;
+import com.ptx.cms.domain.Category;
+import com.ptx.cms.domain.Channel;
 
 
 /**
@@ -64,6 +66,10 @@ public interface ArticleMapper {
 	public void updateBykey(Article article);
 
 
-	
+	public Integer remove(Integer id);
+
+
+	public Category queryAllChannel();
+
 
 }
