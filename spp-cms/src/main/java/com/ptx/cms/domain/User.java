@@ -61,6 +61,7 @@ public class User implements Serializable {
 	private String star;
 	/****/
 	private String motto;
+	private String avater;
 
 	//------------------------------------------------------------------------
 	
@@ -68,6 +69,14 @@ public class User implements Serializable {
 		super();
 	}
 	
+	public String getAvater() {
+		return avater;
+	}
+
+	public void setAvater(String avater) {
+		this.avater = avater;
+	}
+
 	public String getUrl_blog() {
 		return url_blog;
 	}
@@ -243,7 +252,10 @@ public class User implements Serializable {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", nickname=" + nickname
 				+ ", birthday=" + birthday + ", gender=" + gender + ", locked=" + locked + ", created=" + created
 				+ ", updated=" + updated + ", url_blog=" + url_blog + ", score=" + score + ", phone=" + phone
-				+ ", email=" + email + ", address=" + address + ", star=" + star + ", motto=" + motto + "]";
+				+ ", email=" + email + ", address=" + address + ", star=" + star + ", motto=" + motto + ", avater="
+				+ avater + "]";
 	}
+
+
 	
 }

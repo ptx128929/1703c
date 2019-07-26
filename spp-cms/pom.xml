@@ -1,18 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.bawei</groupId>
-  <artifactId>spp-cms</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  
-  
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bawei</groupId>
+	<artifactId>spp-cms</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<!-- 属性设置，归类依赖 -->
 	<properties>
 		<java.version>1.8</java.version>
 		<springforamework.version>4.3.8.RELEASE</springforamework.version>
 	</properties>
-
 	<!-- 依赖 -->
 	<dependencies>
 		<!-- Spring -->
@@ -51,7 +48,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springforamework.version}</version>
 		</dependency>
-
 		<!-- Mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -63,14 +59,12 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-
 		<!-- Bean验证 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
-
 		<!-- 数据源 -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -83,27 +77,23 @@
 			<artifactId>bonecp</artifactId>
 			<version>0.8.0.RELEASE</version>
 		</dependency>
-
 		<!-- 公共包 -->
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>1.10</version>
 		</dependency>
-
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.3.1</version>
 		</dependency>
-
 		<!-- JSON工具 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.7.5</version>
 		</dependency>
-
 		<!-- 日志 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -115,14 +105,12 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.26</version>
 		</dependency>
-		
 		<!-- pageHelper -->
 		<dependency>
-	      <groupId>com.github.pagehelper</groupId>
-	      <artifactId>pagehelper</artifactId>
-	      <version>4.1.6</version>
-	    </dependency>
-
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.6</version>
+		</dependency>
 		<!-- Web -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -141,8 +129,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-
 		<!-- 测试包 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -156,38 +142,26 @@
 			<version>${springforamework.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<!-- 日志输出 -->
 		<dependency>
-	       <groupId>log4j</groupId>
-	       <artifactId>log4j</artifactId>
-	       <version>1.2.17</version>
-   		</dependency>
-
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 		<!-- 自动建表 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.6.Final</version>
 			<scope>test</scope>
-			<!-- <exclusions>
-				<exclusion>
-					<artifactId>jboss-logging</artifactId>
-					<groupId>org.jboss.logging</groupId>
-				</exclusion>
-			</exclusions> -->
+			<!-- <exclusions> <exclusion> <artifactId>jboss-logging</artifactId> <groupId>org.jboss.logging</groupId> 
+				</exclusion> </exclusions> -->
 		</dependency>
-
-
 	</dependencies>
-
-
 	<build>
 		<!-- 打包时生成的文件名 -->
 		<finalName>${pom.artifactId}</finalName>
-
 		<plugins>
-
 			<!-- 编译插件： 覆盖Maven的编译插件，设置编译级别为1.8 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -198,7 +172,6 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-
 			<!-- Tomcat插件：非官方插件，第三方插件，用于启动Web服务。运行命令：tomcat7:run -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -209,7 +182,6 @@
 					<path>/</path>
 				</configuration>
 			</plugin>
-
 			<!-- Jetty插件： 非官方插件，第三方插件，用于启动Web服务。运行命令：jetty:run -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
@@ -226,9 +198,6 @@
 					<stopPort>9966</stopPort>
 				</configuration>
 			</plugin>
-			
 		</plugins>
-		
 	</build>
-  
 </project>

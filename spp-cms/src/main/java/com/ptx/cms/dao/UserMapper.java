@@ -29,5 +29,7 @@ public interface UserMapper {
 
 
 	public User selectById(Integer id);
+
+	public void updateAvater(User user);
 	
 }

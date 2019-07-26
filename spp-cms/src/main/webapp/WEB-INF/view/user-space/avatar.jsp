@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -43,6 +44,13 @@
 				  <div class="panel-body">
 				   <h1>我的头像</h1>
 				    	<hr/>
+				    	<form action="/my/avater/addavater" enctype="multipart/form-data" method="post" >
+				    	<input type="hidden" value="${user.id}" name="id">
+				    		<img alt="" src="<%=request.getContextPath() %>${user.avater}" style="max-height:15rem" class="img-thumbnail"><br>
+				    	    <input type="file" name="file">
+				    		<button type="submit" class="btn btn-info btn-block">保存</button> 
+				    		<span style="color: red">${msg }</span>
+				    	</form>
 				  </div>
 				</div>
 				

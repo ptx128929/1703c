@@ -352,12 +352,6 @@
       <if test="picture != null">
        picture= #{picture,jdbcType=VARCHAR},
       </if>
-      <if test="channel != null">
-       channel= #{channel.id,jdbcType=VARCHAR},
-      </if>
-      <if test="category != null">
-      category=  #{category.id,jdbcType=VARCHAR},
-      </if>
       <if test="hits != null">
         hits=#{hits,jdbcType=INTEGER},
       </if>

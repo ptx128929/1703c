@@ -20,7 +20,7 @@
   </resultMap>
   
   <sql id="Base_Column_List">
-    id, username, password, nickname, birthday, gender, locked, created, updated, phone,email,address,star,motto
+    id, username, password, nickname, birthday, gender, locked, created, updated, phone,email,address,star,motto,avater
   </sql>
   
   <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -127,4 +127,7 @@
   
   </update>
   
+  <update id="updateAvater" parameterType="com.ptx.cms.domain.User">
+  update cms_user set avater=#{avater} where id=#{id}
+  </update>
 </mapper>

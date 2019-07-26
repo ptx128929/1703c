@@ -15,6 +15,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -132,6 +133,31 @@ public class UserController {
 		User us=userService.selectById(user.getId());
 		System.out.println(us);
 		return "user-space/useredit";
+		
+	}
+	
+	@RequestMapping("/profile/avatar")
+	public String avatar(ModelMap map,HttpServletRequest request){
+		User user = (User) request.getSession().getAttribute(Constant.LOGIN_USER);
+		map.put("user", user);
+		return "user-space/avatar";
+		
+	}
+	@RequestMapping("/avater/addavater")
+	public String addavater(User user,MultipartFile file,HttpServletRequest request,ModelMap map,HttpSession session){
+	
+		System.out.println(user.getId());
+		String upload = FileUploadUtil.upload(request, file);
+		if (!upload.equals("")) {
+			user.setAvater(upload);
+			userService.updateAvater(user);
+			User user2 = userService.get(user.getId());
+			System.out.println(user2);
+			request.getSession().setAttribute(Constant.LOGIN_USER, user2);
+			map.put("msg", "上传成功");
+		}
+		
+		return "user-space/avatar";
 		
 	}
 }

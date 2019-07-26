@@ -22,4 +22,6 @@ public interface UserService {
 	public abstract void updateByid(User user);
 
 	public abstract User selectById(Integer id);
+
+	public abstract void updateAvater(User user);
 }
