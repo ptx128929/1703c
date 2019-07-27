@@ -66,7 +66,7 @@
 				    		</c:forEach>
 				    		</tbody>
 				    	</table>
-				    	${pageList}
+				    	${pageList} 
 				  </div>
 				</div>
 			</div>

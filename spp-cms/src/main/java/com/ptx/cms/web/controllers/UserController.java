@@ -73,7 +73,6 @@ public class UserController {
 		PageHelper.startPage(page,3);
 		PageInfo<Article> pageInfo = new PageInfo<Article>(articles,3);
 		String pagelist = PageHelpUtil.page("blogs", pageInfo, null);
-		
 		model.addAttribute("blogs", articles);
 		model.addAttribute("pageList", pagelist);
 		return "user-space/blog_list";
@@ -115,7 +114,6 @@ public class UserController {
 		Integer sunn=articleService.remove(id);
 		System.out.println(sunn);
 		return sunn;
-		
 	}
 	
 	//用户信息完善
